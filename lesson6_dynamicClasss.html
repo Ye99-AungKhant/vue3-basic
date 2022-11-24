@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style>
+        .fav{
+            background-color: black;
+            color: white;
+        }
+        .img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <title>VueJS</title>
+</head>
+<body>
+    
+    <div id="app">
+        <a :href="url">F**k</a>
+        <div v-if="showBook">
+            <li v-for="book in books" :class="{fav: book.isfav }" @click="toggleFav(book)">
+                <img :src="book.img" alt="" class="img"> 
+                <p>{{book.title}}</p>
+                <p> {{book.author}}</p>
+            </li>
+        </div>
+        <button @click="toggleshowbook">
+            <span v-if="showBook">Hide Book</span>
+            <span v-else>Show Book</span>
+            <!-- <span v-if="!showBook">Show Book</span>  -->
+            <!-- !showBook is equal showBook ==false -->
+        </button>
+       
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+<!-- const app = Vue.createApp({
+    //data, function
+   data(){
+    return {
+        showBook:true,
+        url:"http://www.leess.com",
+        books:[
+            {title:'ABC', author:'abc', img:'asset/1.png', isfav:true},
+            {title:'ABCDE', author:'abcde', img:'asset/2.png', isfav:false},
+            {title:'ABCDEFG', author:'abcdefg', img:'asset/3.png', isfav:true},
+        ]
+    }
+   },
+   methods:{
+    toggleshowbook(){
+        this.showBook = !this.showBook
+    },
+    toggleFav(book){
+        book.isfav = !book.isfav
+    }
+   },
+   computed:{
+    filterBook(){
+        return this.books.filter((book) => book.isfav)
+    }
+}
+})
+
+app.mount('#app') -->

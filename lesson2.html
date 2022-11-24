@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <title>VueJS</title>
+</head>
+<body>
+    <div id="app">
+        <div v-if="showBook"> 
+            <p>{{title}} - {{author}} - {{age}}</p>
+        </div>
+        <button @click="toggleshowbook">
+            <span v-if="showBook">Hide Book</span>
+            <span v-else>Show Book</span>
+            <!-- <span v-if="!showBook">Show Book</span>  -->
+            <!-- !showBook is equal showBook ==false -->
+        </button>
+       
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
+<!-- app.js
+
+const app = Vue.createApp({
+    //data, function
+   data(){
+    return {
+        showBook:true,
+        title: "Clean Code",
+        author: "ABC",
+        age: 45
+    }
+   },
+   methods:{
+    toggleshowbook(){
+        this.showBook = !this.showBook
+    }
+   }
+})
+
+app.mount('#app') -->

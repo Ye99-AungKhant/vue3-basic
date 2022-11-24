@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <title>VueJS</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{title}} - {{author}} - {{age}}</p>
+        <button v-on:click="age++">Increase age</button>
+        <div @click="changeBookTitle('Ye Aung Khant')">Change book title</div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
+<!-- app.js -->
+<!-- const app = Vue.createApp({
+    //data, function
+   data(){
+    return {
+        title: "Clean Code",
+        author: "ABC",
+        age: 45
+    }
+   },
+   methods:{
+        changeBookTitle(changetitle){
+            // this.title = 'Hello world'
+            this.title = changetitle
+        }
+   }
+})
+
+app.mount('#app') -->
